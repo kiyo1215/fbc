@@ -94,7 +94,7 @@ function calc(
   
     if (first === '60-1') {
       const time4 = document.getElementById('all_p').value =
-        Math.round(all_price + 2500);
+        Math.round(all_price + 3000);
   }
   if (first === '90') {
     const time4 = document.getElementById('all_p').value =
@@ -106,7 +106,7 @@ function calc(
   }
   if (first === '60-2') {
        const time4 = document.getElementById('all_p').value =
-        Math.round(all_price + 3000);
+        Math.round(all_price + 2500);
   }
   if (first === '60-2-l') {
        const time4 = document.getElementById('all_p').value =
