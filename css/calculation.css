@@ -116,3 +116,8 @@ a:focus {
 #champagne-style {
   margin-bottom: 20px;
 }
+
+#outher_p,
+#outher_m {
+  width: 100px;
+}
