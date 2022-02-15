@@ -35,9 +35,10 @@
         <input type="number" name="go_minute" id="go_minute">分</p>
       </div>
       <p>延長回数<input type="text" name="extension_q" id="field1">回</p>
-      <p>延長料金<input type="text" name="extension_p" id="field2">円</p>
+      <p style="display: none;">延長料金<input type="text" name="extension_p" id="field2">円</p>
     </div>
 
+    <div class="none" style="display: none;">
     <div class="cast-drink">
       <h2>キャストドリンク</h2>
       <p><input type="number" name="castDrinkQuantity" class="quantity">杯<input type="text" id="field3" name="field1" class="price">円</p>
@@ -106,6 +107,8 @@
       <p>ー<input type="number" name="outher_m" id="outher_m">円</p>
     </div>
 
+    </div>
+
     <button type="button" onclick="calc(
       castDrinkQuantity.value,
       cheki_quantity.value,
@@ -128,9 +131,8 @@
       extension_q.value,
       extension_p.value
       );">計算</button>
-      <p class="check">※２回押す</p>
   </form>
-  <p class="all_p">合計金額<input type="text" name="all_p" id="all_p">円</p>
+  <p class="all_p" style="display: none;">合計金額<input type="text" name="all_p" id="all_p">円</p>
 
   <a href="https://kiyo1215.github.io/fbc/">リセット</a>
 
