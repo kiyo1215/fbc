@@ -30,38 +30,26 @@ function calc(
   const time3_2 = Math.round((time1 - time2 - 90) % 20);
   const time4 = Math.round((time1 - time2 - 90) % 20);
   const time7 = Math.round(come_hour * 1);
+  const time8 = Math.round(come_minute * 1);
+  const time9 = Math.round(time7 * 60 + time8);
   //　延長回数、ちょうどいい時間
   if (first === '60-1' || first === '60-2') {
     const time5 = document.getElementById('field1').value =
-    Math.ceil((time1 + time2 - 60) / 20);
-    const time6 = Math.round(20-((time1 + time2) % 20));
-    if (time3 == 0){
-      document.getElementById('feild25').value = go_hour;
-
-      document.getElementById('feild26').value = go_minute;
-    }
-    if (time3 != 0) {
-      document.getElementById('feild25').value = Math.floor(time7 + ((time1 + time2) / 60));
+      Math.ceil((time1 + time2 - 60) / 20);
+    
+    document.getElementById('feild25').value =    Math.floor(((time9 + 60) + time5 * 20) / 60);
       
-      document.getElementById('feild26').value =
-        Math.round((time1 + time2) % 60 + time6);
-    }
+    document.getElementById('feild26').value =
+      Math.round((time5 * 20 + time9 + 60) % 60);
   }
   if (first === '90') {
     const time5 = document.getElementById('field1').value =
       Math.ceil((time1 + time2 - 90) / 20);
-    const time6 = Math.round(20 - ((time1 + time2 + 30) % 20));
-    if (time3_2 == 0){
-      document.getElementById('feild25').value = go_hour;
-
-      document.getElementById('feild26').value = go_minute;
-    }
-    if (time3_2 != 0) {
-      document.getElementById('feild25').value = Math.floor(time7 + ((time1 + time2) / 60));
+    
+    document.getElementById('feild25').value =    Math.floor(((time9 + 90) + time5 * 20 ) / 60);
       
-      document.getElementById('feild26').value =
-        Math.round((time1 + time2) % 60 + time6);
-    }
+    document.getElementById('feild26').value =
+      Math.round((time5 * 20 + time9 + 90) % 60);
   };
   
 
