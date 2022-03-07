@@ -8,6 +8,8 @@ function calc(
   go_hour,
   go_minute,
   first,
+  finish_hour,
+  finish_minute,
   outher_p,
   outher_m,
   champagneA,
@@ -24,15 +26,49 @@ function calc(
 ){
   const time1 = Math.round((go_hour - come_hour) * 60);
   const time2 = Math.round(go_minute - come_minute);
-  
-  //　延長回数
-  if (first === '60-1' || first === '60-2'){
-    const time3 = document.getElementById('field1').value =
-      Math.ceil((time1 + time2 - 60) / 20);
-  } else if (first === '90') {
-    const time3 = document.getElementById('field1').value =
+  const time3 = Math.round((time1 - time2) % 20);
+  const time3_2 = Math.round((time1 - time2 - 90) % 20);
+  const time4 = Math.round((time1 - time2 - 90) % 20);
+  const time7 = Math.round(come_hour * 1);
+  //　延長回数、ちょうどいい時間
+  if (first === '60-1' || first === '60-2') {
+    const time5 = document.getElementById('field1').value =
+    Math.ceil((time1 + time2 - 60) / 20);
+    const time6 = Math.round(20-((time1 + time2) % 20));
+    if (time3 == 0){
+      document.getElementById('feild25').value = go_hour;
+
+      document.getElementById('feild26').value = go_minute;
+    }
+    if (time3 != 0) {
+      document.getElementById('feild25').value = Math.floor(time7 + ((time1 + time2) / 60));
+      
+      document.getElementById('feild26').value =
+        Math.round((time1 + time2) % 60 + time6);
+    }
+  }
+  if (first === '90') {
+    const time5 = document.getElementById('field1').value =
       Math.ceil((time1 + time2 - 90) / 20);
+    const time6 = Math.round(20 - ((time1 + time2 + 30) % 20));
+    if (time3_2 == 0){
+      document.getElementById('feild25').value = go_hour;
+
+      document.getElementById('feild26').value = go_minute;
+    }
+    if (time3_2 != 0) {
+      document.getElementById('feild25').value = Math.floor(time7 + ((time1 + time2) / 60));
+      
+      document.getElementById('feild26').value =
+        Math.round((time1 + time2) % 60 + time6);
+    }
   };
+  
+
+
+
+
+
   // 延長料金
   const price4 = document.getElementById('field2').value =
     Math.round(extension_q * 1000);
